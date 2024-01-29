@@ -9,6 +9,16 @@ Vous devez posséder, une raspberry, un compte sur [RTE-France](https://data.rte
 
 Aucun hardware n'est à installer sur le compteur éléctrique.
 
+## Pré-requis:
+
+ - Une Raspberry (ou tout autre ordinateur sous Linux avec un moniteur)
+ - Apache2
+ - Python3
+ - PHP
+ - Accès à l'API [RTE-France](https://data.rte-france.com/)
+ - (Unclutter)
+ - Et... c'est tout !
+
 # Preview
 
 ![Example](https://i.imgur.com/cIvg4GI.png)
