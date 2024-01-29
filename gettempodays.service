@@ -1,0 +1,10 @@
+[Unit]
+Description=Get EDF TEMPO days
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/gettempodays.py &
+Restart=always
+#User=root   # Remplacez par le nom de l'utilisateur qui exécutera le script
+
+[Install]
+WantedBy=multi-user.target
