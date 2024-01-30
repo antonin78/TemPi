@@ -26,8 +26,8 @@ def get_current_and_next_day():
 
 def get_new_token():
     auth_server_url = "https://digital.iservices.rte-france.com/token/oauth"
-    client_id = ''
-    client_secret = ''
+    client_id = '6b8704fa-1ba0-42d1-881a-5d9b8827fa09'
+    client_secret = '4087ed35-080b-4c2f-9d7f-80488ca1abf6'
     
     token_req_payload = {'grant_type': 'client_credentials'}
 
@@ -67,17 +67,20 @@ while True:
         print(api_call_response.text)
         #print("Données stockés dans le fichier output")
 
-        values = json_response['tempo_like_calendars']['values']
+        try:
+            values = json_response['tempo_like_calendars']['values']
 
-        value1 = values[0]['value']
-        value0 = values[1]['value']
+            value1 = values[0]['value']
+            value0 = values[1]['value']
 
-        print("Value ajd:", value0)
-        print("Value demain:", value1)
+            print("Value ajd:", value0)
+            print("Value demain:", value1)
 
-        # Écrire les données dans un fichier texte (mode 'w' remet à zéro le fichier à chaque passage)
-        with open('/var/www/html/output.txt', 'w') as file:
-            file.write(f"{value0}\n")
-            file.write(f"{value1}\n")
+            # Écrire les données dans un fichier texte (mode 'w' remet à zéro le fichier à chaque passage)
+            with open('output.txt', 'w') as file:
+                file.write(f"{value0}\n")
+                file.write(f"{value1}\n")
+        except:
+            print ("No data available yet for tomorrow")
     # Wait for 15min before the next iteration
     time.sleep(900)
