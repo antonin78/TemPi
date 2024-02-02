@@ -26,8 +26,8 @@ def get_current_and_next_day():
 
 def get_new_token():
     auth_server_url = "https://digital.iservices.rte-france.com/token/oauth"
-    client_id = '6b8704fa-1ba0-42d1-881a-5d9b8827fa09'
-    client_secret = '4087ed35-080b-4c2f-9d7f-80488ca1abf6'
+    client_id = ''
+    client_secret = ''
     
     token_req_payload = {'grant_type': 'client_credentials'}
 
